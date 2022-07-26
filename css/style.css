@@ -1,0 +1,645 @@
+*{
+  margin:0;
+  padding:0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  background:linear-gradient(lightblue,steelblue);
+  display: flex;
+  flex-direction: column;
+  font-family: 'Fira Sans', sans-serif;
+}
+/* mobile version */
+@media(min-width: 300px){
+  body{
+    align-items: center;
+    row-gap: 35px;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  header nav{
+    width: 100%;
+    display: flex;
+    justify-content: right;
+  }
+  header > nav > ul{
+    display: none;
+  }
+
+  details{
+    position: relative;
+    width: 100%;
+    padding: 5%;
+    color:white;
+  }
+  details > ul{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    width: 35%;
+  }
+  details > ul > li{
+    display: flex;
+    width: 100%;
+    background-color: rgba(255, 69, 0,.8);
+  }
+  details > ul a{
+    text-transform: uppercase;
+    width: 100%;
+    text-decoration: none;
+    color:whitesmoke;
+    padding: 2% 5%;
+    font-size: 16px;
+  }
+
+  details a:hover{
+    color: white;
+    background-color: dimgray;
+  }
+
+  summary{
+    font-size: 32px;
+  }
+
+  header > article{
+    color: white;
+    padding: 5%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header > article p{
+    text-align: center;
+    font-size: 24px;
+  }
+
+  header > article > ul,
+  footer > ul{
+    display: flex;
+    width: 80%;
+  }
+
+  header > article li,
+  footer li{
+    display: flex;
+    width: 100%;
+  }
+  header > article a{
+    text-decoration: none;
+    text-align: center;
+    padding: 50%;
+    font-size: 18px;
+    color: white;
+  }
+
+  main{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    row-gap: 30px;
+  }
+
+  main >  section{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    padding: 10%;
+  }
+  main > section > article{
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+  }
+
+  footer{
+    display: flex;
+    flex-direction: column;
+    row-gap:3vh;
+    align-items: center;
+    width: 90%;
+    color: white;
+    height:fit-content;
+    padding: 3%;
+  }
+  footer figure{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  footer img{
+    width: 7vh;
+    padding: 2%;
+
+    animation-name: change;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+  
+  footer > p{
+    text-align: center;
+    width: 100%;
+    font-size: 12px;
+  }
+  
+  footer li{
+    display: flex;
+    justify-content: center;
+    height: 5vh;
+  }
+  footer a{
+    text-decoration: none;
+    color: white;
+    padding: 2%;
+  }
+  h1{
+    font-size: 36px;
+    text-align: center;
+    font-weight: 600;
+  }
+  h2{
+    font-size: 28px;
+    color: navy;
+    padding-bottom: 1%;
+    border-bottom: 1px solid navy;
+    width: 90%;
+  }
+
+  form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+  }
+  input{
+    background-color: rgba(105,105,105,.2);
+    border:1px solid rgba(105,105,105,.1);
+    padding: 3%;
+  }
+
+  input,
+  textarea{
+    border-radius: 10px;
+  }
+
+  textarea{
+    height:15vh;
+    padding: 5%;
+    background-color: rgba(105,105,105,.2);
+    border:1px solid rgba(105,105,105,.2);
+    font-size: 14px;
+    font-family: 'Fira Sans', sans-serif;
+  }
+
+  .about{
+    row-gap: 20px;
+  }
+
+  .about figure{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about > article > section{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+  .about > article > section p{
+  text-align: justify;
+  line-height: 1.5;
+  }
+
+  .about img,
+  .project img{
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  .project figure{
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+  }
+  .project figcaption{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: dimgray;
+  }
+
+  .project a{
+    text-transform: uppercase;
+    color: dimgray;
+    text-decoration: none;
+    padding: 1%;
+    font-weight: 500;
+    font-size: 20px;
+  }
+  .project article{
+    row-gap: 80px;
+  }
+
+  .work aside{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    text-align: justify;
+  }
+  .language div{
+    display: flex;
+    column-gap: 10px;
+    width: 90%;
+  }
+
+  .education h2,
+  .language h2{
+    padding: 0;
+    width: 100%;
+    font-size: 24px;
+  }
+  .language h3{
+    text-transform: capitalize;
+    font-size: 20px;
+  }
+  .language small{
+    color: dimgray;
+    font-size: 16px;
+  }
+  .language small:hover,
+  .language p:hover{
+    color: firebrick;
+    font-size: 18px;
+  }
+ 
+  .sns ul{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    width: 100%;
+  }
+  .sns li{
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+    width: 100%;
+  }
+
+  .sns i{
+    border:1px solid navy;
+    border-radius: 50%;
+    padding: 3%;
+  }
+  .sns i:hover{
+    background-color: royalblue;
+    color: white;
+  }
+
+  .sns a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color:dimgray;
+  }
+
+  ::placeholder{
+    text-transform: capitalize;
+    color: gray;
+  }
+  [type=submit]{
+    color:gray;
+    width: 50%;
+    border-radius: 30px;
+    border:1px solid white;
+  }
+  [type=submit]:hover{
+    color: white;
+    background:linear-gradient(steelblue,navy);
+    border: seagreen;
+  }
+}
+
+@keyframes move{
+  0%{
+    transform: translateX(0%);
+  }
+  35%{
+    transform: translateX(200%);
+  }
+  70%{
+    transform: translateX(-200%);
+  }
+  100%{
+    transform: translateX(0%);
+  }
+}
+
+@keyframes width{
+  0%{
+    width: 70%;
+    height: 8vh;
+  }
+  50%{
+    width:30%;
+    height: 8vh;
+  }
+  100%{
+    width:0%;
+    height: 8vh;
+  }
+}
+@keyframes change{
+  from{
+    color: antiquewhite;
+  }
+  to{
+    color: black;
+  }
+}
+/* tablet version */
+@media(min-width: 600px){
+  body{
+    row-gap: 60px;
+  }
+  main{
+    row-gap: 50px;
+  }
+  header{
+    width: 90%;
+  }
+  header > article p,
+  header > article a{
+    font-size: 36px;
+  }
+  footer {
+    row-gap: 4vh;
+  }
+  footer ul{
+    width: 60%;
+  }
+  footer li{
+    justify-content: center;
+  }
+  footer a{
+    font-size: 26px;
+    padding: 5%;
+    text-align: center;
+  }
+  summary{
+    font-size: 52px;
+  }
+  h1{
+    font-size: 44px;
+  }
+  h2{
+    font-size: 36px;
+    padding-bottom: 3%;
+  }
+  form{
+    row-gap: 3vh;
+  }
+
+  input{
+    padding: 4%;
+  }
+  ::placeholder{
+    font-size: 24px;
+  }
+  [type=submit]{
+    font-size: 22px;
+  }
+  .about article {
+    align-items: center;
+  }
+
+  .about p,
+  footer p,
+  .work p,
+  .education p,
+  .language p{
+    font-size: 24px;
+  }
+  .about p{
+    padding-top: 10%;
+  }
+
+  .about figcaption{
+    font-size: 26px;
+  }
+  
+  .project figcaption a{
+    font-size: 24px;
+  }
+
+  .project figcaption time,
+  .work time,
+  .sns a{
+    font-size: 24px;
+  }
+  .work h3,
+  .education h3{
+    font-size: 26px;
+  }
+  
+  .education time,
+  .language small{
+    font-size: 22px;
+  }
+  .education h2,
+  .language h2{
+    font-size: 36px;
+    padding-bottom: 3%;
+  }
+
+}
+/* desktop version */
+@media(min-width: 1000px){
+  body{
+    row-gap: 5px;
+  }
+  header{
+    padding: 3% 1%;
+    width: 90%;
+    height: fit-content;
+    flex-direction: column-reverse;
+  }
+  header > article{
+    row-gap: 15px;
+    height: 24vh;
+  }
+
+  header > article p,
+  footer p{
+    font-size: 26px;
+  }
+
+  header > article ul,
+  footer ul{
+    width:50%;
+  }
+  header > article li,
+  footer li{
+    justify-content: center;
+  }
+  header > article a,
+  footer a{
+    color:white;
+    font-size: 30px;
+    width: 50%;
+    height: 10vh;
+    padding: 10% 5%;
+  }
+  header > nav{
+    display: flex;
+    width: 80%;
+  }
+
+  header > nav > ul {
+    display: flex;
+    column-gap: 7px;
+    width: 100%;
+  }
+  header > nav > ul > li {
+    display: flex; 
+    background-color: lightblue;
+    width: 100%;
+  }
+  header > nav > ul a{
+    width: 100%;
+    text-decoration: none;
+    padding: 5%;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    border: 1px solid lightblue;
+    border-radius: 10px;
+  }
+  header > nav a:hover{
+    background-color: steelblue;
+    transition: .4;
+  }
+  
+  details{
+    display: none;
+  }
+  h1{
+    font-size: 42px;
+  }
+  h2{
+    font-size: 38px;
+  }
+
+  main > section{
+    row-gap: 40px;
+    padding: 5%;
+  }
+  main > section > article{
+    flex-direction: row;
+  }
+
+  footer{
+    row-gap: 3vh;
+  }
+  footer img{
+    width: 10vh;
+  }
+  footer a{
+    height: 0;
+    padding: 5%;
+    width: 100%;
+    font-size: 36px;
+  }
+  form{
+    width: 95%;
+  }
+  [type=submit]{
+    font-size: 26px;
+  }
+  ::placeholder{
+    font-size: 22px;
+  }
+
+  .about > article > section{
+    display: flex;
+    flex-direction: column;
+    row-gap:2vh;
+    padding: 1%;
+  }
+  .about > article > section p{
+    font-size: 20px;
+    width: 90%;
+    padding: 1%;
+  }
+
+  .project > article{
+    column-gap: 8vh;
+  }
+
+  .project figure{
+    width: 100%;
+  }
+  .project img{
+    height: 45vh;
+  }
+  
+  .education div{
+    width: 35%;
+  }
+
+  .sns ul{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  .sns li{
+    width: 100%;
+  }
+
+  .sns a,
+  .sns i{
+    font-size: 22px;
+  }
+  .sns i{
+    height: 3vh;
+    width: 3vh;
+  }
+  .sns a{
+    padding: 0%;
+    width: 100%;
+  }
+
+  .work time,
+  .education time,
+  .language small{
+    font-size: 24px;
+  }
+  .work h3,
+  .education h3,
+  .language h3{
+    font-size: 30px;
+  }
+
+  .work p,
+  .language p{
+    font-size: 28px;
+  }
+
+  .education > article:last-child div{
+    width: 100%;
+  }
+}
