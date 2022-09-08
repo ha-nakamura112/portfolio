@@ -135,17 +135,10 @@ body{
     height:fit-content;
     padding: 3%;
   }
-  footer figure{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
+  footer i{
+    font-size: 36px;
 
-  footer img{
-    width: 7vh;
-    padding: 2%;
-
-    animation-name: change;
+    animation-name: move;
     animation-duration: 3s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
@@ -231,11 +224,18 @@ body{
     border-radius: 5px;
   }
 
+  .project article{
+    row-gap: 80px;
+    width: 100%;
+  }
+
   .project figure{
+    width: 100%;
     display: flex;
     flex-direction: column;
     row-gap: 16px;
   }
+
   .project figcaption{
     display: flex;
     flex-direction: column;
@@ -250,9 +250,6 @@ body{
     padding: 1%;
     font-weight: 500;
     font-size: 20px;
-  }
-  .project article{
-    row-gap: 80px;
   }
 
   .work aside{
@@ -348,28 +345,6 @@ body{
   }
 }
 
-@keyframes width{
-  0%{
-    width: 70%;
-    height: 8vh;
-  }
-  50%{
-    width:30%;
-    height: 8vh;
-  }
-  100%{
-    width:0%;
-    height: 8vh;
-  }
-}
-@keyframes change{
-  from{
-    color: antiquewhite;
-  }
-  to{
-    color: black;
-  }
-}
 /* tablet version */
 @media(min-width: 600px){
   body{
@@ -440,7 +415,18 @@ body{
   .about figcaption{
     font-size: 26px;
   }
-  
+
+  .project > article{
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .project > article > figure{
+    width: 60vh;
+  }
+
   .project figcaption a{
     font-size: 24px;
   }
@@ -459,6 +445,7 @@ body{
   .language small{
     font-size: 22px;
   }
+
   .education h2,
   .language h2{
     font-size: 36px;
@@ -564,14 +551,28 @@ body{
     width: 100%;
     font-size: 36px;
   }
+
   form{
-    width: 95%;
+    width: 90%;
+    align-items: center;
   }
+
+  input {
+    height: 1vh;
+    width: 80%;
+  }
+
+  textarea {
+    width: 80%;
+    padding: 4%;
+  }
+
   [type=submit]{
-    font-size: 26px;
+    font-size: 22px;
+    padding-top: 2%;
   }
   ::placeholder{
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .about > article > section{
@@ -587,12 +588,9 @@ body{
   }
 
   .project > article{
-    column-gap: 8vh;
+    column-gap: 5vh;
   }
 
-  .project figure{
-    width: 100%;
-  }
   .project img{
     height: 45vh;
   }
@@ -636,9 +634,12 @@ body{
 
   .work p,
   .language p{
-    font-size: 28px;
+    font-size: 24px;
   }
 
+  .language p:hover{
+    font-size: 28px;
+  }
   .education > article:last-child div{
     width: 100%;
   }
